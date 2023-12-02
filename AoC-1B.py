@@ -25,9 +25,9 @@ sum = 0
 for x in f.readlines():
     firstNum = re.findall("[1-9]|one|two|three|four|five|six|seven|eight|nine", x)[0]
 
-    for i in range(len(x) + 1):
-        findLastNumbers = re.findall("[1-9]|one|two|three|four|five|six|seven|eight|nine", x[len(x) - i:])
-        if len(findLastNumbers) == 1:
+    for i in range(len(x) + 1): 
+        findLastNumbers = re.findall("[1-9]|one|two|three|four|five|six|seven|eight|nine", x[len(x) - i:]) # find backwards
+        if len(findLastNumbers) == 1: # if a match is found, return as second number
             secondNum = findLastNumbers[0]
             break
         
